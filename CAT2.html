@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahriyar Hayat Khan - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+   <!-- <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Times+New+Roman&display=swap" rel="stylesheet"> -->
+    <style>
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #fff;
+    border-bottom: 2px solid #eee;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center; /* Center the logo */
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Set max width for centering */
+    padding: 1rem 2rem;
+}
+
+.logo {
+    display: flex;
+    justify-content: center; /* Center the logo */
+    align-items: center;
+}
+
+.logo-img {
+    width: 75px;  /* Standard size for logo */
+    height: 75px;  /* Maintain aspect ratio */
+    border-radius: 75%;  /* Make it circular */
+    object-fit: cover;  /* Ensures the image fits well */
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #007bff;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to right, #007bff, #6610f2);
+    color: #fff;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.hero-content h2 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    background-color: #fff;
+    color: #007bff;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* About Section */
+.about {
+    padding: 4rem 0;
+    background-color: #fff;
+    text-align: center;  /* Center text */
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
+    flex-direction: column;  /* Stack items vertically */
+    gap: 2rem;
+}
+
+.about-text {
+    flex: 1;
+    font-size: 1.2rem;
+    max-width: 600px; /* Limit width */
+    margin: 0 auto; /* Center text */
+}
+
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-image img {
+    width: 250px;  /* Standard size */
+    height: auto;
+    border-radius: 50%;  /* Make the image circular */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* Projects Section */
+.projects {
+    padding: 4rem 0;
+    background-color: #f8f9fa;
+}
+
+.projects h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.project-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.project-info h3 {
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    color: #007bff;
+}
+
+.project-info p {
+    margin-bottom: 1.5rem;
+    color: #666;
+}
+
+.project-info a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.project-info a:hover {
+    background-color: #0056b3;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Contact Section */
+.contact {
+    padding: 4rem 2rem;
+    background-color: #fff;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.contact p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-info li {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.contact-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.footer-links {
+    margin-top: 1rem;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+    </style>
+
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <!-- Centered Logo with Image -->
+                <a href="#hero" class="logo">
+                    <img src="https://datascientists.com/wp-content/uploads/2022/08/data-science-logo-icon.png" alt="Logo" class="logo-img">
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h2>Data Scientist & Machine Learning Enthusiast</h2>
+            <p>Welcome to my portfolio! Explore my projects and get to know more about my work.</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container about-content">
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>I'm Shahriyar Hayat Khan, a Data Science student at Christ University, Pune-Lavasa, with a passion for turning data into insights. I have experience in data analytics, machine learning, and AI, and have worked on projects like Votes Analysis and Restaurant Reviews Analysis during my internship. I’m eager to apply my skills to real-world challenges and collaborate on impactful projects.</p>
+            </div>
+            <div class="about-image">
+                <!-- Centered Profile Picture -->
+                <img src="C:\Users\shahr\Downloads\1701027461266.jpeg" alt="Shahriyar Hayat Khan" class="profile-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="projects-grid">
+                <!-- HR Analytics Project -->
+                <div class="project-card">
+                    <img src="https://www.techfunnel.com/wp-content/uploads/2019/12/HR-Analytics-Overview-1.jpg" alt="HR Analytics" class="project-img">
+                    <div class="project-info">
+                        <h3>HR Analytics</h3>
+                        <p>Data cleaning and visualization of HR data to uncover insights on employee metrics and trends.</p>
+                        <a href="https://github.com/Shahriyar-Khan27/ShkCraftWork/blob/main/HR%20.ipynb" target="_blank" class="btn">View Project</a>
+                    </div>
+                </div>
+                <!-- Votes Analysis Project -->
+                <div class="project-card">
+                    <img src="https://fairvote.org/wp-content/uploads/pages/18347/meta_images/original/krist-blog-rcv-and-partisan-nominations.jpg" alt="Votes Analysis" class="project-img">
+                    <div class="project-info">
+                        <h3>Votes Analysis</h3>
+                        <p>Analyzed voting data to find patterns using Python, Pandas, and Seaborn.</p>
+                        <a href="https://github.com/Shahriyar-Khan27/Projects/blob/main/Vote%20Analysis.ipynb" target="_blank" class="btn">View Project</a>
+                    </div>
+                </div>
+                <!-- Restaurant Reviews Analysis Project -->
+                <div class="project-card">
+                    <img src="https://www.synergysuite.com/wp-content/uploads/2022/06/SWOT-ANALYSIS-FOR-RESTAURANT-OWNERS-SynergySuite-2022-2240-%C3%97-1260-px-3.png" alt="Restaurant Reviews Analysis" class="project-img">
+                    <div class="project-info">
+                        <h3>Restaurant Reviews Analysis</h3>
+                        <p>Performed sentiment analysis on restaurant reviews to identify key trends using NLTK.</p>
+                        <a href="https://github.com/Shahriyar-Khan27/Projects/blob/main/Restaurant%20Reviews.ipynb" target="_blank" class="btn">View Project</a>
+                    </div>
+                </div>
+                <!-- Diabetes Prediction Model Project -->
+                <div class="project-card">
+                    <img src="https://www.askpython.com/wp-content/uploads/2021/11/FeaImg_Diabetes-Prediction.png" alt="Diabetes Prediction Model" class="project-img">
+                    <div class="project-info">
+                        <h3>Diabetes Prediction Model</h3>
+                        <p>Developed a predictive model for diabetes using machine learning algorithms.</p>
+                        <a href="https://github.com/Shahriyar-Khan27/ShkCraftWork/blob/main/Diabetes.ipynb" target="_blank" class="btn">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>If you want to collaborate or have any questions, feel free to reach out!</p>
+            <ul class="contact-info">
+                <li>Email: <a href="mailto: shahriyarofficial86@gmail.com">shahriyarofficial86@gmail.com</a></li>
+                <li>LinkedIn: <a href="https://www.linkedin.com/in/shahriyar-hayat-khan-58843419b" target="_blank">Shahriyar Hayat Khan</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Shahriyar Hayat Khan. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
